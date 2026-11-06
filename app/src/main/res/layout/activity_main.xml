@@ -1,19 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- juste badalna ml constraintLayout lel LinearLayout w hatina l'orientation verticale avec padding 24dp w f centre-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="28dp"
+    android:background="#F3F5FA"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textview_SS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="28dp"
+        android:text="DOUANE TEMPORELL"
+        android:textColor="#2358A6"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+<!--hethi l input li yhot feha l'utilisateur l'année de destination-->
+    <EditText
+        android:id="@+id/edit_destination_SS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Année de Destination"
+        android:inputType="number" />
+    <!--hethi l select wl label mtaa motif li ynajem yhot l'utilisateur raison de voyage mte3ou -->
+    <TextView
+        android:id="@+id/text_motif_SS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Motif du Voyage"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Spinner
+        android:id="@+id/spinner_motif_SS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_inspecter_SS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inspecter le Profil"
+        android:layout_marginTop="28dp" />
+
+
+</LinearLayout>
