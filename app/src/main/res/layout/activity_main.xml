@@ -22,7 +22,23 @@
         android:textColor="#2358A6"
         android:textSize="25sp"
         android:textStyle="bold" />
+
 <!--hethi l input li yhot feha l'utilisateur l'année de destination-->
+
+    <EditText
+        android:id="@+id/edit_nom_AT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom du voyageur"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_naissance_AT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Année de naissance"
+        android:inputType="number"/>
+
     <EditText
         android:id="@+id/edit_destination_SS"
         android:layout_width="match_parent"
@@ -47,8 +63,8 @@
         android:id="@+id/btn_inspecter_SS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inspecter le Profil"
-        android:layout_marginTop="28dp" />
+        android:layout_marginTop="28dp"
+        android:text="Inspecter le Profil" />
 
 
 </LinearLayout>
