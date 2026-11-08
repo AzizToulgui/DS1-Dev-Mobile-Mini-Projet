@@ -33,6 +33,7 @@ public class VerificationActivity extends AppCompatActivity {
                 IntentKeys.createKey(MATRICULE, "MOTIF"));
         //  hsebna l age temporel
         int ageTemporel = anneeDestination - anneeNaissance;
+
         // aabina text views l fer8in
         txtNom.setText("Traveler: " + Nom);
         txtAge.setText("Temporel Age: " + ageTemporel + " years");

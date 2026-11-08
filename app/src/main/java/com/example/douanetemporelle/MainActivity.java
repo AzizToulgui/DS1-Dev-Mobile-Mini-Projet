@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
 // lena bech nbaathou les donnees lel activity verification ken
             intent.putExtra(IntentKeys.createKey(MATRICULE, "NOM_VOYAGEUR"), nomVoyageur);
-            intent.putExtra(IntentKeys.createKey(MATRICULE, "ANNEE_NAISSANCE"), anneeN);
-            intent.putExtra(IntentKeys.createKey(MATRICULE, "ANNEE_DESTINATION"),anneeD);
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "ANNEE_NAISSANCE"), Integer.parseInt(anneeN));
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "ANNEE_DESTINATION"),Integer.parseInt(anneeD));
             intent.putExtra(IntentKeys.createKey(MATRICULE, "MOTIF"),raison);
             intent.putExtra(IntentKeys.createKey(MATRICULE, "MATRICULE"),MATRICULE);
 
