@@ -1,13 +1,9 @@
 package com.example.douanetemporelle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.*;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +43,32 @@ public class MainActivity extends AppCompatActivity {
         );
 
         motif.setAdapter(adapter);
+
+//lena bech naamlou el tratment eli ysir ki nenzlou ala el button inspecter
+        inspecter.setOnClickListener(v -> {
+//lena aamlna recupertation de donnee eli ktebhom el ustilisateur
+            String nomVoyageur = nom.getText().toString().trim();
+            String anneeN = naissance.getText().toString().trim();
+            String anneeD = destination.getText().toString().trim();
+//lena 3mlna check bech nchouchou ken fama input fergha
+            if(nomVoyageur.isEmpty() || anneeN.isEmpty() || anneeD.isEmpty()){
+                Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+                return;
+            }
+//lena jebna el reaison mtaa el vaoyage
+            String raison = motif.getSelectedItem().toString();
+
+// i thnik lena aamlna el creation mtaa el intent
+            Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
+// lena bech nbaathou les donnees lel activity verification ken
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "NOM_VOYAGEUR"), nomVoyageur);
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "ANNEE_NAISSANCE"), anneeN);
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "ANNEE_DESTINATION"),anneeD);
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "MOTIF"),raison);
+            intent.putExtra(IntentKeys.createKey(MATRICULE, "MATRICULE"),MATRICULE);
+
+            startActivity(intent);
+        });
 
     }
 }
